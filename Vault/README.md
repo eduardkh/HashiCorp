@@ -31,3 +31,14 @@ vault login token=root # or export VAULT_TOKEN="root"
 export VAULT_TOKEN="root"
 export VAULT_ADDR="http://127.0.0.1:8200"
 ```
+
+> transit
+
+```bash
+# enable transit engine
+vault secrets enable transit
+# create a secret
+vault write -f transit/keys/unseal-key
+# attach a policy to the secret
+vault policy write unseal policy.hcl
+```
