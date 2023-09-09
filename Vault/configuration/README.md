@@ -32,3 +32,34 @@ vault operator unseal [Key1]
 vault operator unseal [Key2]
 vault operator unseal [Key3]
 ```
+
+> regenerate a new root token (if lost)
+
+```bash
+# generate Nonce and OTP token
+vault operator generate-root -init
+
+# generate Encoded Token with Nonce and Unseal Key
+vault operator generate-root -nonce=[Nonce] [Unseal Key]
+vault operator generate-root -nonce=[Nonce] [Unseal Key]
+vault operator generate-root -nonce=[Nonce] [Unseal Key]
+
+# finally Root Token with OTP and Encoded Token
+vault operator generate-root -otp=[OTP] -decode=[Encoded Token]
+```
+
+> or just start fresh (delete the old data)
+
+```bash
+sudo systemctl stop vault
+sudo rm -rf /opt/vault/data/
+sudo systemctl start vault
+
+# Initialize Vault
+vault operator init
+
+# Unseal Vault
+vault operator unseal [Key1]
+vault operator unseal [Key2]
+vault operator unseal [Key3]
+```
