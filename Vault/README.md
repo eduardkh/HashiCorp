@@ -30,6 +30,9 @@ vault login token=root # or export VAULT_TOKEN="root"
 # or export to environment variables
 export VAULT_TOKEN="root"
 export VAULT_ADDR="http://127.0.0.1:8200"
+
+# or use source to load the environment variables
+source dev_server.env
 ```
 
 > transit (for auto unseal)
