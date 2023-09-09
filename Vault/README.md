@@ -1,5 +1,7 @@
 # HashiCorp Vault
 
+Bryan Krausen [Vault](https://github.com/btkrausen/hashicorp/tree/master/vault) Github repository
+
 > spin-up a dev server in a container (server side)
 
 ```bash
